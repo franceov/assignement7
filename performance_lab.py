@@ -56,6 +56,15 @@ Brute-force:
   Notes: Very simple but quadratic — poor scalability.
 
 Optimized (hash map):
+Time:
+  - Best:   O(1) expected (match on first/second element)
+  - Average O(n) expected overall (amortized O(1) per lookup/insert)
+  - Worst:  O(n) in practice; pathological hashing aside
+Space:
+  - O(n) for the dictionary of seen values
+Trade-off:
+  - Extra memory to get linear time
+
   Time:
     - Best:   O(1) expected (match on first/second element)
     - Averag
