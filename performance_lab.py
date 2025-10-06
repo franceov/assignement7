@@ -68,3 +68,36 @@ Trade-off:
   Time:
     - Best:   O(1) expected (match on first/second element)
     - Averag
+def _run_tests():
+    # Problem 1
+    assert two_sum_bruteforce([2, 7, 11, 15], 9) in {(0, 1), (1, 0)}
+    assert two_sum([2, 7, 11, 15], 9) in {(0, 1), (1, 0)}
+    assert two_sum([3, 2, 4], 6) in {(1, 2), (2, 1)}
+    try:
+        two_sum([1, 2, 3], 100)
+    except ValueError:
+        pass
+
+    # Problem 2
+    assert is_anagram("listen", "silent") is True
+    assert is_anagram("rat", "car") is False
+    assert is_anagram("", "") is True
+    assert is_anagram("aabb", "baba") is True
+
+    # Problem 3
+    assert merge_sorted([1, 3, 5], [2, 4, 6]) == [1, 2, 3, 4, 5, 6]
+    assert merge_sorted([], [1, 2]) == [1, 2]
+
+    # Problem 4
+    assert has_all_unique_chars("abc") is True
+    assert has_all_unique_chars("abca") is False
+
+    # Problem 5
+    m = [[1,2,3],[4,5,6],[7,8,9]]
+    rotate_matrix_90_inplace(m)
+    assert m == [[7,4,1],[8,5,2],[9,6,3]]
+
+    print("All tests passed.")
+
+if __name__ == "__main__":
+    _run_tests()
